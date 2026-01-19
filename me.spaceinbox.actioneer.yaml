@@ -15,7 +15,6 @@ finish-args:
   - --share=ipc
   - --socket=wayland
   - --socket=fallback-x11
-  - --talk-name=org.freedesktop.secrets
   - --device=dri
 
 modules:
@@ -42,6 +41,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: ae5632e76bd72a2076bc674a0458e0a044bdb386
+        commit: f48aacbed6ef6a9d5c7c74247955c27fc3363bcf
       # flatpak-cargo-generator -d Cargo.lock -o flatpak/me.spaceinbox.actioneer.cargo-sources.json
       - me.spaceinbox.actioneer.cargo-sources.json
