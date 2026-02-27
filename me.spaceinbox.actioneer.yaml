@@ -35,12 +35,14 @@ modules:
       - install -Dm755 target/release/actioneer /app/bin/actioneer
       - install -Dm644 data/me.spaceinbox.actioneer.desktop /app/share/applications/me.spaceinbox.actioneer.desktop
       - install -Dm644 data/metainfo.xml /app/share/metainfo/me.spaceinbox.actioneer.metainfo.xml
+      - install -d /app/share/actioneer/po
+      - cp -a po/*.po /app/share/actioneer/po/
       - mkdir -p /app/share/icons/hicolor
       - cp -a icons/icons/hicolor/* /app/share/icons/hicolor/
       - find /app/share/icons/hicolor -type f -name 'actioneer.*' -delete
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: 08826146db3eb143d995b03ca1d8cf9b624b1d94
+        commit: 413004eca1c8e717a4307e26fa39c377b6e3294f
       # flatpak-cargo-generator -d Cargo.lock -o flatpak/me.spaceinbox.actioneer.cargo-sources.json
       - me.spaceinbox.actioneer.cargo-sources.json
