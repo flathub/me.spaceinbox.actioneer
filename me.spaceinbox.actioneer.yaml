@@ -41,6 +41,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: 08826146db3eb143d995b03ca1d8cf9b624b1d94
+        commit: 5128d23d6ddee782fba94631d8fdace5bd14cc00
       # flatpak-cargo-generator -d Cargo.lock -o flatpak/me.spaceinbox.actioneer.cargo-sources.json
       - me.spaceinbox.actioneer.cargo-sources.json
