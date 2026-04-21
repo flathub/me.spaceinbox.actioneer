@@ -1,6 +1,6 @@
 app-id: me.spaceinbox.actioneer
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: "50"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -34,6 +34,7 @@ modules:
       - cargo --offline build --release
       - install -Dm755 target/release/actioneer /app/bin/actioneer
       - install -Dm644 data/me.spaceinbox.actioneer.desktop /app/share/applications/me.spaceinbox.actioneer.desktop
+      - msgfmt --xml -L MetaInfo --template=data/metainfo.xml.in -d po -o data/metainfo.xml
       - install -Dm644 data/metainfo.xml /app/share/metainfo/me.spaceinbox.actioneer.metainfo.xml
       - install -d /app/share/actioneer/po
       - cp -a po/*.po /app/share/actioneer/po/
@@ -43,5 +44,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: 00b1e85b1f7e0b093ae5ef5496b061b793a51177
+        commit: 1360c3fc36197b7974a911cabb94536d40d14675
       - me.spaceinbox.actioneer.cargo-sources.json
