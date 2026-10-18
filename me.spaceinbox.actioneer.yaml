@@ -5,7 +5,7 @@
 # (or scripts/regenerate-flatpak-sources.sh)
 app-id: me.spaceinbox.actioneer
 runtime: org.gnome.Platform
-runtime-version: "50"
+runtime-version: "51"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -21,6 +21,9 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --device=dri
+  # Read-only access to the Omarchy theme state so the app can follow the
+  # desktop theme; without the grant the follow feature is simply unavailable.
+  - --filesystem=~/.local/state/omarchy:ro
 
 modules:
   - name: actioneer
@@ -49,5 +52,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: 7eee85d4844000948bc53f440099daf2e650817c
+        commit: a66107707be74d157486adfb065d4ea38a5bd282
       - me.spaceinbox.actioneer.cargo-sources.json
