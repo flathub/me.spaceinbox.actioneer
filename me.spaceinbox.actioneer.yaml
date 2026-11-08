@@ -52,5 +52,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/makoni/Actioneer-gtk.git
-        commit: 3db0e7e8052b2ea71cfb4e82fabc25986be07d49
+        commit: f9f116dc39f4650c6b1f5739b942f06e1f8ee7db
       - me.spaceinbox.actioneer.cargo-sources.json
